@@ -9,6 +9,7 @@ public class module {
 	public double calculMoyenne(int idUtilisateur) {
 		return idUtilisateur;
 		penis penis;
+		//nananananananananana
 	}
 
 }
