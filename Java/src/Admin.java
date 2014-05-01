@@ -1,3 +1,5 @@
+import java.util.Set;
+
 public class Admin extends Utilisateur {
 
 //Constructeur
@@ -15,10 +17,10 @@ public class Admin extends Utilisateur {
 		else{
 			return login.substring(0, 10);
 		}
-		
 	}
 	
-	public void creerPromotion(){
+	public void creerPromotion(String nom){
+		
 		
 	}
 
