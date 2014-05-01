@@ -1,8 +1,8 @@
 public class Professeur extends Utilisateur{
 
 	//Constructeur
-	public Professeur(int idUtilisateur, String nom, String prenom, String role) {
-		super(idUtilisateur, nom, prenom);
+	public Professeur(String nom, String prenom, String login, String password) {
+		super(nom, prenom, login, password);
 	}
 
 	//Méthodes

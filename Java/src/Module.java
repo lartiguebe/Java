@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 
 public class Module {
 
@@ -34,5 +36,16 @@ public class Module {
 	public void setPrerequis(String prerequis) {
 		this.prerequis = prerequis;
 	}
-
+	
+	public Module(String nom, String syllabus, String prerequis){
+		this.nom=nom;
+		this.syllabus=syllabus;
+		this.prerequis=prerequis;
+	}
+	
+	public String toString() {
+		String res;
+		res = "("+this.nom+","+this.syllabus+","+this.prerequis+")";
+		return res;
+	}
 }

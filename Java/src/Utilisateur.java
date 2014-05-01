@@ -1,13 +1,10 @@
 public abstract class Utilisateur{
-	public final int idUtilisateur;
 	public final String nom;
 	public final String prenom;
+	public final String login;
+	public final String password;
 
 //Getters
-public final int getIdUtilisateur(){
-	return this.idUtilisateur;
-}
-
 public final String getNom(){
 	return this.nom;
 }
@@ -15,12 +12,20 @@ public final String getNom(){
 public final String getPrenom(){
 	return this.prenom;
 }
-	
+
+public final String getlogin(){
+	return this.login;
+}
+
+public final String getPassword(){
+	return this.password;
+}
 //Constructeur
-public Utilisateur(int idUtilisateur, String nom, String prenom){
-		this.idUtilisateur=idUtilisateur;
+public Utilisateur(String nom, String prenom, String login, String password){
         this.nom=nom;
         this.prenom=prenom;
+        this.login=login;
+        this.password=password;
     }
 
 //Méthode identification
