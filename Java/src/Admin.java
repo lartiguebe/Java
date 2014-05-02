@@ -1,6 +1,13 @@
-public class Admin extends Utilisateur {
+import java.io.Serializable;
 
-//Constructeur
+public class Admin extends Utilisateur implements Serializable{
+
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6063159330187409500L;
+
+	//Constructeur
 	public Admin(String nom, String prenom, String login, String password) {
 		super(nom, prenom, login, password);
 	}
@@ -8,7 +15,7 @@ public class Admin extends Utilisateur {
 //Méthodes
 	
 	//Utilisateurs
-	public String creerLogin(String nom, String prenom){
+	public static String creerLogin(String nom, String prenom){
 		String login;
 		login = nom.toLowerCase()+prenom.toLowerCase();
 		if (login.length()<=10){
@@ -19,8 +26,9 @@ public class Admin extends Utilisateur {
 		}
 	}
 	
-	public void creerUtilisateur(String nom, String prenom, String role) {
+	public static void creerUtilisateur(String nom, String prenom, String role) {
 		//TODO switch case avec instanceof sur admin, on peut pas instancier un utilisateur directement mais uniquement un prof, etudiant ou admin.
+		
 		switch(role){
 		case "admin":
 			Admin a = new Admin(nom, prenom, creerLogin(nom, prenom), "eisti");
@@ -38,15 +46,16 @@ public class Admin extends Utilisateur {
 			break;
 		}
 	}
-	
-	public void creerPromotion(){
-		
-		
+
+	//Promotion
+	public static void creerPromotion(String nomPromo){
+		Promotion p = new Promotion(nomPromo);
+		Modele.ajouterPromo(p);
 	}
 
 	
 	//Modules
-	public void definirModule(String nom, String syllabus, String prerequis){
+	public static void definirModule(String nom, String syllabus, String prerequis){
 		Module m = new Module(nom, syllabus, prerequis);
 		Modele.ajouterModule(m);		
 	}
@@ -55,5 +64,8 @@ public class Admin extends Utilisateur {
 		Module m = new Module(nom, syllabus, prerequis);
 		Modele.supprimerModule(m);	
 	}
+	
+	
+	
 
 }

@@ -1,4 +1,11 @@
-public class Professeur extends Utilisateur{
+import java.io.Serializable;
+
+public class Professeur extends Utilisateur implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3208006922305759654L;
 
 	//Constructeur
 	public Professeur(String nom, String prenom, String login, String password) {

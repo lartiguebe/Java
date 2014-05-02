@@ -1,16 +1,14 @@
-import java.util.Objects;
-
 
 public class Module {
 
 
-	private  String nom;
+	private String nom;
 	private String syllabus;
 	private String prerequis;
 	
 	public double calculMoyenne(int idUtilisateur) {
 		return (double)(idUtilisateur);
-		//Biteee
+		
 	}
 
 	public String getNom() {
@@ -45,7 +43,7 @@ public class Module {
 	
 	public String toString() {
 		String res;
-		res = "("+this.nom+","+this.syllabus+","+this.prerequis+")";
+		res = "Module("+this.nom+","+this.syllabus+","+this.prerequis+")";
 		return res;
 	}
 }
