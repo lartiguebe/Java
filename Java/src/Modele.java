@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.Set;
 
 public class Modele implements Serializable {
@@ -6,32 +7,32 @@ public class Modele implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -4188236036221949452L;
-		//Création des collections nécessaires
-		static Set<Module> modules;
-		static Set<Admin> administrateurs;
-		static Set<Professeur> profs;
-		static Set<Etudiant> etudiants;
-		static Set<Promotion> promos;
+		 //Création des collections nécessaires
+	static Set<Module> modules;
+	static Set<Admin> administrateurs;
+	static Set<Professeur> profs;
+	static Set<Etudiant> etudiants;
+	static Set<Promotion> promos;
 	
 		//Setters
-		public static Set<Module>getModule(){
-			return modules;
+		public Set<Module>getModule(){
+			return Collections.unmodifiableSet(Modele.modules);
 		}
 		
-		public static Set<Admin>getAdmin(){
-			return administrateurs;
+		public Set<Admin>getAdmin(){
+			return Collections.unmodifiableSet(Modele.administrateurs);
 		}
 		
-		public static Set<Professeur>getProf(){
-			return profs;
+		public Set<Professeur>getProf(){
+			return Collections.unmodifiableSet(Modele.profs);
 		}
 		
-		public static Set<Etudiant>getEtudiant(){
-			return etudiants;
+		public Set<Etudiant>getEtudiant(){
+			return Collections.unmodifiableSet(Modele.etudiants);
 		}
 		
-		public static Set<Promotion>getPromo(){
-			return promos;
+		public Set<Promotion>getPromo(){
+			return Collections.unmodifiableSet(Modele.promos);
 		}
 		
 		//Constructeur

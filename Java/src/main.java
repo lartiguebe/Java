@@ -20,8 +20,8 @@ public class main {
 		
 		Modele m = new Modele(modules,administrateurs,profs,etudiants,promos);
 		Admin.creerUtilisateur("admin","","admin");
-		Admin.creerUtilisateur("Lartigue","Benjamin","admin");
-		Admin.creerUtilisateur("Godet","Maxence","admin");
+		Admin.creerUtilisateur("Lartigue","Benjamin","etudiant");
+		Admin.creerUtilisateur("Godet","Maxence","prof");
 		Admin.definirModule("Math", "Fun", "Lol");
 		Admin.definirModule("Info", "BofFun", "Aucunes");
 		Admin.creerPromotion("ING1");
