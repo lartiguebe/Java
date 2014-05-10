@@ -4,13 +4,13 @@ import java.util.Iterator;
 import java.util.Set;
 
 
-public class main {
+public class Main {
 
 	/**
 	 * @param args
 	 * @throws IOException 
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void Main(String[] args) throws IOException {
 		Set<Module> modules = new HashSet<Module>();
 		Set<Admin> administrateurs = new HashSet<Admin>();
 		Set<Professeur> profs = new HashSet<Professeur>();
