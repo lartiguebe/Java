@@ -30,6 +30,16 @@ public class main {
 		 System.out.println(it.next().toString());
 		}
 		
+		Iterator<Etudiant> it4 = etudiants.iterator();
+		while (it4.hasNext()) {
+		 System.out.println(it4.next().toString());
+		}
+		
+		Iterator<Professeur> it5 = profs.iterator();
+		while (it5.hasNext()) {
+		 System.out.println(it5.next().toString());
+		}
+		
 		Iterator<Module> it2 = modules.iterator();
 		while (it2.hasNext()) {
 		 System.out.println(it2.next().toString());
