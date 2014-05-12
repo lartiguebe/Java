@@ -1,5 +1,3 @@
-package src;
-
 public class QuestionQCM {
 	
 	// On gère le nombre de question dans cette classe, et le libelle des réponses possibles?
