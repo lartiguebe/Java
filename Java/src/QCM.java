@@ -6,6 +6,12 @@ public class QCM {
 	private GregorianCalendar dateFinQCM;
 	private String promotion;
 	//private String repetition; 
+	// Ajouter nombre de questions en paramètre?
+	public QCM(GregorianCalendar dateDebutQCM,GregorianCalendar dateFinQCM, String promotion) {
+		this.dateDebutQCM=dateDebutQCM;
+		this.dateFinQCM=dateFinQCM;
+		this.promotion=promotion;
+	}
 	
 	public static void definirDate(int jour, int mois, int annee){
 		
