@@ -1,6 +1,7 @@
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class Modele implements Serializable {
@@ -46,6 +47,49 @@ public class Modele implements Serializable {
 			Admin.creerUtilisateur("admin","","admin",this);
 		}
 		
+		//Méthodes listes
+		
+		
+		public void getListModule(){
+			Iterator<Module> it = modules.iterator();
+			while (it.hasNext()) {
+				System.out.println(it.next().toString());
+			}
+		}
+//		@Override
+//		public Iterator<Module> iterator(){
+//			return Collections.unmodifiableSet(modules).iterator();
+//		}
+		
+		public void getListAdmin(){
+			Iterator<Admin> it = administrateurs.iterator();
+			while (it.hasNext()) {
+				System.out.println(it.next().toString());
+			}
+		}
+		
+		public void getListProf(){
+			Iterator<Professeur> it = profs.iterator();
+			while (it.hasNext()) {
+				System.out.println(it.next().toString());
+			}
+		}
+		
+		public void getListEtudiant(){
+			Iterator<Etudiant> it = etudiants.iterator();
+			while (it.hasNext()) {
+				System.out.println(it.next().toString());
+			}
+		}
+		
+		public void getListPromo(){
+			Iterator<Promotion> it = promos.iterator();
+			while (it.hasNext()) {
+				System.out.println(it.next().toString());
+			}
+		}
+		
+		
 		//Méthodes
 		public void ajouterModule(Module m){
 			modules.add(m);
@@ -53,6 +97,10 @@ public class Modele implements Serializable {
 		
 		public void supprimerModule(Module m){
 			modules.remove(m);
+		}
+		
+		public void contientModule(Module m){
+			modules.contains(m);
 		}
 		
 		public void ajouterAdmin(Admin a){
@@ -63,12 +111,20 @@ public class Modele implements Serializable {
 			administrateurs.remove(a);
 		}
 		
+		public void contientAdmin(Admin a){
+			administrateurs.contains(a);
+		}
+		
 		public void ajouterProfesseur(Professeur p){
 			profs.add(p);
 		}
 		
 		public void supprimerProfesseur(Professeur p){
 			profs.remove(p);
+		}
+		
+		public void contientProfesseur(Professeur p){
+			administrateurs.contains(p);
 		}
 		
 		public void ajouterEtudiant(Etudiant e){
@@ -79,11 +135,19 @@ public class Modele implements Serializable {
 			etudiants.remove(e);
 		}
 		
+		public void contientEtudiant(Etudiant e){
+			etudiants.contains(e);
+		}
+		
 		public void ajouterPromo(Promotion p){
 			promos.add(p);
 		}
 		
 		public void supprimerPromo(Promotion p){
 			promos.remove(p);
+		}
+		
+		public void contientPromo(Promotion p){
+			promos.contains(p);
 		}
 }

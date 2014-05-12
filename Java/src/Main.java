@@ -11,7 +11,7 @@ public class Main {
 	 * @throws IOException 
 	 * @throws ClassNotFoundException 
 	 */
-	public static void Main(String[] args) throws IOException, ClassNotFoundException {
+	public static void main (String[] args) throws ClassNotFoundException, IOException{
 //		Admin.creerUtilisateur("Lartigue","Benjamin","etudiant");
 //		Admin.creerUtilisateur("Godet","Maxence","prof");
 //		Admin.definirModule("Math", "Fun", "Lol");
@@ -23,8 +23,8 @@ public class Main {
 //		}
 		Modele m;
 		m = Sauvegarde.lireObjet();
-		//Lancer interface graphique thomas ici
-		
+		//Lancer interface graphique thomas
+		m.getListAdmin();
 		Sauvegarde.sauvegardeObjet(m);
 		
 			

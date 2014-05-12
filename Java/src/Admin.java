@@ -46,6 +46,8 @@ public class Admin extends Utilisateur implements Serializable{
 			break;
 		}
 	}
+	
+	
 
 	//Promotion
 	public static void creerPromotion(String nomPromo, Modele m){
