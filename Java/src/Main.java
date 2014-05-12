@@ -23,7 +23,7 @@ public class Main {
 //		}
 		Modele m;
 		m = Sauvegarde.lireObjet();
-		//Lancer interface graphique thomas
+		//Lancer interface graphique thomas ici
 		
 		Sauvegarde.sauvegardeObjet(m);
 		

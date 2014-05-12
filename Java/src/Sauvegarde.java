@@ -24,7 +24,7 @@ public class Sauvegarde {
 			d = (Modele)ob.readObject();
 		}
 		catch (IOException | ClassNotFoundException e){
-			d=new Modele();
+			d=new Modele();//Créer un nouveau modèle
 		}
 		return d;
 	}

@@ -43,7 +43,7 @@ public class Modele implements Serializable {
 			this.profs = new HashSet<Professeur>();
 			this.etudiants = new HashSet<Etudiant>();
 			this.promos = new HashSet<Promotion>();
-			Admin.creerUtilisateur("admin","","admin", this);
+			Admin.creerUtilisateur("admin","","admin",this);
 		}
 		
 		//Méthodes
