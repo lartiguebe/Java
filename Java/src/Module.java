@@ -1,7 +1,13 @@
+import java.io.Serializable;
 
-public class Module {
+
+public class Module implements Serializable{
 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2146559383652094675L;
 	private String nom;
 	private String syllabus;
 	private String prerequis;

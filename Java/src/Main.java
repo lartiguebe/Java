@@ -21,7 +21,11 @@ public class Main {
 		Modele m;
 		m = Sauvegarde.lireObjet();
 		//Lancer interface graphique thomas
+		Admin.creerUtilisateur("Lartigue", "Benjamin", "admin",m);
+		Admin.creerUtilisateur("Sorres", "Thomas", "admin",m);
 		m.getListAdmin();
+		m.getListModule();
+	
 		Sauvegarde.sauvegardeObjet(m);
 	}
 
