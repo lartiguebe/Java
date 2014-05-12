@@ -99,8 +99,8 @@ public class Modele implements Serializable {
 			modules.remove(m);
 		}
 		
-		public void contientModule(Module m){
-			modules.contains(m);
+		public boolean contientModule(Module m){
+			return modules.contains(m);
 		}
 		
 		public void ajouterAdmin(Admin a){
@@ -111,8 +111,8 @@ public class Modele implements Serializable {
 			administrateurs.remove(a);
 		}
 		
-		public void contientAdmin(Admin a){
-			administrateurs.contains(a);
+		public boolean contientAdmin(Admin a){
+			return administrateurs.contains(a);
 		}
 		
 		public void ajouterProfesseur(Professeur p){
@@ -123,8 +123,8 @@ public class Modele implements Serializable {
 			profs.remove(p);
 		}
 		
-		public void contientProfesseur(Professeur p){
-			administrateurs.contains(p);
+		public boolean contientProfesseur(Professeur p){
+			return administrateurs.contains(p);
 		}
 		
 		public void ajouterEtudiant(Etudiant e){
@@ -135,8 +135,8 @@ public class Modele implements Serializable {
 			etudiants.remove(e);
 		}
 		
-		public void contientEtudiant(Etudiant e){
-			etudiants.contains(e);
+		public boolean contientEtudiant(Etudiant e){
+			return etudiants.contains(e);
 		}
 		
 		public void ajouterPromo(Promotion p){
@@ -147,7 +147,7 @@ public class Modele implements Serializable {
 			promos.remove(p);
 		}
 		
-		public void contientPromo(Promotion p){
-			promos.contains(p);
+		public boolean contientPromo(Promotion p){
+			return promos.contains(p);
 		}
 }
