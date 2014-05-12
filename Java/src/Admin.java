@@ -62,8 +62,14 @@ public class Admin extends Utilisateur implements Serializable{
 		m.ajouterModule(module);		
 	}
 	
-	public static void modifierModule(String nom, String syllabus, String prerequis){
-		
+	public static void modifierModule(String nom, String newNom, String syllabus, String newSyllabus, String prerequis, String newPrerequis, Modele m){
+				
+		Module o = new Module(nom, syllabus, prerequis);
+		if (m.contientModule(o)){
+			m.supprimerModule(o);
+			//lance application pour récupérer les nouvelles valeurs
+			m.ajouterModule(new Module(newNom, newSyllabus, newPrerequis));
+		}
 	}
 	
 	

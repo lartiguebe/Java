@@ -1,7 +1,4 @@
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
 
 
 public class Main {
@@ -26,9 +23,6 @@ public class Main {
 		//Lancer interface graphique thomas
 		m.getListAdmin();
 		Sauvegarde.sauvegardeObjet(m);
-		
-			
-
 	}
 
 }
