@@ -1,5 +1,6 @@
 import java.io.Serializable;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 public class Modele implements Serializable {
@@ -8,80 +9,81 @@ public class Modele implements Serializable {
 	 */
 	private static final long serialVersionUID = -4188236036221949452L;
 		 //Création des collections nécessaires
-	static Set<Module> modules;
-	static Set<Admin> administrateurs;
-	static Set<Professeur> profs;
-	static Set<Etudiant> etudiants;
-	static Set<Promotion> promos;
+	private Set<Module> modules;
+	private Set<Admin> administrateurs;
+	private Set<Professeur> profs;
+	private Set<Etudiant> etudiants;
+	private Set<Promotion> promos;
 	
 		//Setters
 		public Set<Module>getModule(){
-			return Collections.unmodifiableSet(Modele.modules);
+			return Collections.unmodifiableSet(this.modules);
 		}
 		
 		public Set<Admin>getAdmin(){
-			return Collections.unmodifiableSet(Modele.administrateurs);
+			return Collections.unmodifiableSet(this.administrateurs);
 		}
 		
 		public Set<Professeur>getProf(){
-			return Collections.unmodifiableSet(Modele.profs);
+			return Collections.unmodifiableSet(this.profs);
 		}
 		
 		public Set<Etudiant>getEtudiant(){
-			return Collections.unmodifiableSet(Modele.etudiants);
+			return Collections.unmodifiableSet(this.etudiants);
 		}
 		
 		public Set<Promotion>getPromo(){
-			return Collections.unmodifiableSet(Modele.promos);
+			return Collections.unmodifiableSet(this.promos);
 		}
 		
 		//Constructeur
-		public Modele(Set<Module> module, Set<Admin> admins, Set<Professeur> profss, Set<Etudiant> etudiantss, Set<Promotion> promoss){
-			modules = module;
-			administrateurs = admins;
-			profs = profss;
-			etudiants = etudiantss;
-			promos = promoss;
+		public Modele(){
+			this.modules = new HashSet<Module>();
+			this.administrateurs = new HashSet<Admin>();
+			this.profs = new HashSet<Professeur>();
+			this.etudiants = new HashSet<Etudiant>();
+			this.promos = new HashSet<Promotion>();
+			Admin.creerUtilisateur("admin","","admin", this);
 		}
 		
 		//Méthodes
-		public static void ajouterModule(Module m){
+		public void ajouterModule(Module m){
 			modules.add(m);
 		}
 		
-		public static void supprimerModule(Module m){
+		public void supprimerModule(Module m){
 			modules.remove(m);
 		}
 		
-		public static void ajouterAdmin(Admin a){
+		public void ajouterAdmin(Admin a){
 			administrateurs.add(a);
 		}
 		
-		public static void supprimerAdmin(Admin a){
+		public void supprimerAdmin(Admin a){
 			administrateurs.remove(a);
 		}
 		
-		public static void ajouterProfesseur(Professeur p){
+		public void ajouterProfesseur(Professeur p){
 			profs.add(p);
 		}
 		
-		public static void supprimerProfesseur(Professeur p){
+		public void supprimerProfesseur(Professeur p){
 			profs.remove(p);
 		}
 		
-		public static void ajouterEtudiant(Etudiant e){
+		public void ajouterEtudiant(Etudiant e){
 			etudiants.add(e);
 		}
 		
-		public static void supprimerEtudiant(Etudiant e){
+		public void supprimerEtudiant(Etudiant e){
 			etudiants.remove(e);
 		}
 		
-		public static void ajouterPromo(Promotion p){
+		public void ajouterPromo(Promotion p){
 			promos.add(p);
 		}
 		
-		public static void supprimerPromo(Promotion p){
+		public void supprimerPromo(Promotion p){
 			promos.remove(p);
 		}
 }

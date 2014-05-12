@@ -23,6 +23,9 @@ public class Sauvegarde {
 		try (ObjectInputStream ob = new ObjectInputStream(new FileInputStream(f))){
 			d = (Modele)ob.readObject();
 		}
+		catch (IOException | ClassNotFoundException e){
+			d=new Modele();
+		}
 		return d;
 	}
 
