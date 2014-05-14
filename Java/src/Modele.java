@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashSet;
@@ -45,6 +46,14 @@ public class Modele implements Serializable {
 			this.etudiants = new HashSet<Etudiant>();
 			this.promos = new HashSet<Promotion>();
 			Admin.creerUtilisateur("admin","","admin",this);
+		}
+		static Modele refModele  = null;
+		
+		public static Modele getModele() throws ClassNotFoundException, IOException{
+			if (refModele==null){
+				refModele=Sauvegarde.lireObjet();
+			}
+			return refModele;
 		}
 		
 		//Méthodes listes

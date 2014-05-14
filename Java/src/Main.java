@@ -19,12 +19,14 @@ public class Main {
 //		 System.out.println(it.next().toString());
 //		}
 		Modele m;
-		m = Sauvegarde.lireObjet();
+		//m = Sauvegarde.lireObjet();
+		m = Modele.getModele();
 		//Lancer interface graphique thomas
-		Admin.creerUtilisateur("Lartigue", "Benjamin", "admin",m);
-		Admin.creerUtilisateur("Sorres", "Thomas", "admin",m);
+		//Admin.creerUtilisateur("Lartigue", "Benjamin", "admin",m);
+		//Admin.creerPromotion("ING2", m);
 		m.getListAdmin();
 		m.getListModule();
+		m.getListPromo();
 	
 		Sauvegarde.sauvegardeObjet(m);
 	}

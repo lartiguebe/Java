@@ -1,5 +1,11 @@
-public class Promotion {
+import java.io.Serializable;
+
+public class Promotion implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6346273924623297066L;
 	private String libellePromo;
 	
 	public double calculMoyenne(int idUtilisateur) {
