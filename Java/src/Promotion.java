@@ -1,4 +1,6 @@
 import java.io.Serializable;
+import java.util.NavigableSet;
+import java.util.TreeSet;
 
 public class Promotion implements Serializable {
 	
@@ -7,10 +9,12 @@ public class Promotion implements Serializable {
 	 */
 	private static final long serialVersionUID = 6346273924623297066L;
 	private String libellePromo;
+	private NavigableSet<Etudiant> ensEtudiant;
+	
+	
 	
 	public double calculMoyenne(int idUtilisateur) {
 		return (double)(idUtilisateur);
-		
 	}
 
 	public String getLibellePromo() {
@@ -22,8 +26,8 @@ public class Promotion implements Serializable {
 	}
 
 	public Promotion(String libellePromo) {
-		super();
 		this.libellePromo = libellePromo;
+		this.ensEtudiant = new TreeSet<Etudiant>(); //TODO
 	}
 	
 	public String toString() {

@@ -47,6 +47,7 @@ public class Modele implements Serializable {
 			this.promos = new HashSet<Promotion>();
 			Admin.creerUtilisateur("admin","","admin",this);
 		}
+		
 		static Modele refModele  = null;
 		
 		public static Modele getModele() throws ClassNotFoundException, IOException{
