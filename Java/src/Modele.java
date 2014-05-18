@@ -18,7 +18,7 @@ public class Modele implements Serializable {
 	private Set<Promotion> promos;
 	
 		//Setters
-		public Set<Module>getModule(){
+		public Set<Module> getModule(){
 			return Collections.unmodifiableSet(this.modules);
 		}
 		
@@ -39,13 +39,13 @@ public class Modele implements Serializable {
 		}
 		
 		//Constructeur
-		public Modele(){
+		public Modele() throws ClassNotFoundException, IOException{
 			this.modules = new HashSet<Module>();
 			this.administrateurs = new HashSet<Admin>();
 			this.profs = new HashSet<Professeur>();
 			this.etudiants = new HashSet<Etudiant>();
 			this.promos = new HashSet<Promotion>();
-			Admin.creerUtilisateur("admin","","admin",this);
+			Admin.creerUtilisateur("admin","","admin", this);
 		}
 		
 		static Modele refModele  = null;
@@ -159,5 +159,51 @@ public class Modele implements Serializable {
 		
 		public boolean contientPromo(Promotion p){
 			return promos.contains(p);
+		}
+		
+		public Utilisateur getUtilisateur(String login) throws ClassNotFoundException, IOException{
+			Utilisateur res = null;
+			try{
+				for(Utilisateur u : this.getAdmin()){
+					if (u.getlogin().equals(login)){
+						res = u;
+					}
+				}
+				
+				if ((res==null) && (!this.getProf().isEmpty())){
+					for(Utilisateur u : this.getProf()){
+						if (u.getlogin().equals(login)){
+							res = u;
+						}
+					}
+				}
+				
+				if ((res==null) && (!this.getEtudiant().isEmpty())){
+					for(Utilisateur u : this.getEtudiant()){
+						if (u.getlogin().equals(login)){
+							res = u;
+						}
+					}
+				}
+			}catch (Exception e){
+				System.out.println("Problème modèle au getUtilisateur!: "+e);
+			}
+			return res;
+		}
+		
+		public Module getModule(Module module) throws ClassNotFoundException, IOException{
+			Modele m;
+			m = Modele.getModele();
+			Module res = null;
+			try{
+				for(Module mod : m.getModule()){
+					if (mod.getNom().equals(module)){
+						res = mod;
+					}
+				}
+			}catch (Exception e){
+				System.out.println("Problème modèle au getModule!: "+e);
+			}
+			return res;
 		}
 }
