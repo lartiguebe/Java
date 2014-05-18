@@ -47,6 +47,7 @@ public class Module implements Serializable{
 		this.prerequis=prerequis;
 	}
 	
+	//Méthodes
 	public String toString() {
 		String res;
 		res = "Module("+this.nom+","+this.syllabus+","+this.prerequis+")";

@@ -19,12 +19,13 @@ public class Main {
 //		 System.out.println(it.next().toString());
 //		}
 		Modele m;
-		//m = Sauvegarde.lireObjet();
 		m = Modele.getModele();
 		//Lancer interface graphique thomas
-		//Admin.creerUtilisateur("Lartigue", "Benjamin", "admin",m);
-		//Admin.creerPromotion("ING2", m);
+		Admin.creerUtilisateur("Lartigue","Benjamin","etudiant",m); //Test homonyme
+		
 		m.getListAdmin();
+		m.getListProf();
+		m.getListEtudiant();
 		m.getListModule();
 		m.getListPromo();
 	

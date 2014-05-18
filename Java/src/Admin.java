@@ -1,10 +1,11 @@
+import java.io.IOException;
 import java.io.Serializable;
 
 public class Admin extends Utilisateur implements Serializable{
-
 /**
 	 * 
 	 */
+
 	private static final long serialVersionUID = 6063159330187409500L;
 
 	//Constructeur
@@ -15,33 +16,35 @@ public class Admin extends Utilisateur implements Serializable{
 //Méthodes
 	
 	//Utilisateurs
-	public static String creerLogin(String nom, String prenom){
+	public static String creerLogin(String nom, String prenom, Modele m) throws ClassNotFoundException, IOException{
 		String login;
+		
 		login = nom.toLowerCase()+prenom.toLowerCase();
-		if (login.length()<=10){
-			return login;
+		
+		if (login.length()>10){
+			login = login.substring(0, 10);
 		}
-		else{
-			return login.substring(0, 10);
+		
+		if (!(m.getUtilisateur(login)==null)){
+			login = login+"2"; //Homonyme
 		}
+		return login;
 	}
 	
-	public static void creerUtilisateur(String nom, String prenom, String role, Modele m) {
-		//TODO switch case avec instanceof sur admin, on peut pas instancier un utilisateur directement mais uniquement un prof, etudiant ou admin.
-		
+	public static void creerUtilisateur(String nom, String prenom, String role, Modele m) throws ClassNotFoundException, IOException{
 		switch(role){
 		case "admin":
-			Admin a = new Admin(nom, prenom, creerLogin(nom, prenom), "eisti");
+			Admin a = new Admin(nom, prenom, creerLogin(nom, prenom,m), "eisti");
 			m.ajouterAdmin(a);
 			break;
 		
 		case "prof":
-			Professeur p = new Professeur(nom, prenom, creerLogin(nom, prenom), "eisti");
+			Professeur p = new Professeur(nom, prenom, creerLogin(nom, prenom,m), "eisti");
 			m.ajouterProfesseur(p);
 			break;
 			
 		case "etudiant":
-			Etudiant e = new Etudiant(nom,prenom,creerLogin(nom,prenom), "eisti");
+			Etudiant e = new Etudiant(nom,prenom,creerLogin(nom,prenom,m), "eisti");
 			m.ajouterEtudiant(e);
 			break;
 		}

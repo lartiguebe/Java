@@ -10,6 +10,7 @@ public abstract class Utilisateur implements Serializable{
 	public final String login;
 	public final String password;
 
+
 //Getters
 public final String getNom(){
 	return this.nom;

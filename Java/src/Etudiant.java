@@ -24,6 +24,4 @@ public class Etudiant extends Utilisateur implements Serializable {
 	public void visualiserResultats(){
 		
 	}
-
-
 }
