@@ -29,7 +29,7 @@ public class Main {
 		m.getListModule();
 		m.getListPromo();
 	
-		Sauvegarde.sauvegardeObjet(m);
+		Sauvegarde.sauvegardeModele(m);
 	}
 
 }

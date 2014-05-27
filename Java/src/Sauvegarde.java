@@ -6,8 +6,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 
+
 public class Sauvegarde {
-	public static void sauvegardeObjet(Modele d) throws IOException{
+	public static void sauvegardeModele(Modele d) throws IOException{
 		File f = new File("modele.obj");
 		try (ObjectOutputStream ob = new ObjectOutputStream(new FileOutputStream(f))){
 			ob.writeObject(d);
@@ -17,7 +18,7 @@ public class Sauvegarde {
 		}
 	}
 	
-	public static Modele lireObjet() throws IOException, ClassNotFoundException{
+	public static Modele lireModele() throws IOException, ClassNotFoundException{
 		File f = new File("modele.obj");
 		Modele d;
 		try (ObjectInputStream ob = new ObjectInputStream(new FileInputStream(f))){

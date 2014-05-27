@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Admin extends Utilisateur implements Serializable{
 /**
@@ -73,6 +74,29 @@ public class Admin extends Utilisateur implements Serializable{
 			//lance application pour récupérer les nouvelles valeurs
 			m.ajouterModule(new Module(newNom, newSyllabus, newPrerequis));
 		}
+	}
+	@Override
+	public boolean equals (Object o) {
+		if(o==this) {//Si c'est le même
+			return true;
+		} 
+		if (!(o instanceof Admin)) {//Si ce n'est pas un point
+			return false;
+		}
+
+		Admin p = (Admin) o;
+		return ((this.getNom().equals(p.getNom()))&&(this.getPrenom().equals(p.getPrenom()))&&(this.getlogin().equals(p.getlogin()))&&(this.getPassword().equals(p.getPassword())));
+		//Si nom obligatoire, on peut faire this.nom.equals(p.nom)
+	}
+	
+	@Override
+	public int compareTo(Utilisateur o) {
+		return this.getlogin().compareTo(o.getlogin());
+	}
+	
+	@Override
+	public final int hashCode() {
+		return Objects.hash(this.getNom(),this.getPrenom(),this.getlogin(),this.getPassword());
 	}
 	
 	

@@ -1,9 +1,10 @@
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Iterator;
+import java.util.NavigableSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Modele implements Serializable {
 	 /**
@@ -11,48 +12,57 @@ public class Modele implements Serializable {
 	 */
 	private static final long serialVersionUID = -4188236036221949452L;
 		 //Création des collections nécessaires
-	private Set<Module> modules;
-	private Set<Admin> administrateurs;
-	private Set<Professeur> profs;
-	private Set<Etudiant> etudiants;
-	private Set<Promotion> promos;
+	private NavigableSet<Module> modules;
+	private NavigableSet<Admin> administrateurs;
+	private NavigableSet<Professeur> profs;
+	private NavigableSet<Etudiant> etudiants;
+	private NavigableSet<Promotion> promos;
 	
-		//Setters
+		//Getters
 		public Set<Module> getModule(){
-			return Collections.unmodifiableSet(this.modules);
+			return Collections.unmodifiableSortedSet(this.modules);
 		}
 		
 		public Set<Admin>getAdmin(){
-			return Collections.unmodifiableSet(this.administrateurs);
+			return Collections.unmodifiableSortedSet(this.administrateurs);
 		}
 		
 		public Set<Professeur>getProf(){
-			return Collections.unmodifiableSet(this.profs);
+			return Collections.unmodifiableSortedSet(this.profs);
 		}
 		
 		public Set<Etudiant>getEtudiant(){
-			return Collections.unmodifiableSet(this.etudiants);
+			return Collections.unmodifiableSortedSet(this.etudiants);
 		}
 		
 		public Set<Promotion>getPromo(){
-			return Collections.unmodifiableSet(this.promos);
+			return Collections.unmodifiableSortedSet(this.promos);
 		}
 		
 		//Constructeur
-		public Modele() throws ClassNotFoundException, IOException{
-			this.modules = new HashSet<Module>();
-			this.administrateurs = new HashSet<Admin>();
-			this.profs = new HashSet<Professeur>();
-			this.etudiants = new HashSet<Etudiant>();
-			this.promos = new HashSet<Promotion>();
-			Admin.creerUtilisateur("admin","","admin", this);
+		public Modele() {
+			this.modules = new TreeSet<>();
+			this.administrateurs = new TreeSet<>();
+			this.profs = new TreeSet<>();
+			this.etudiants = new TreeSet<>();
+			this.promos = new TreeSet<>();
+			try {
+				Admin.creerUtilisateur("admin","","admin", this);
+			} catch (ClassNotFoundException | IOException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		static Modele refModele  = null;
 		
-		public static Modele getModele() throws ClassNotFoundException, IOException{
+		public static Modele getModele() {
 			if (refModele==null){
-				refModele=Sauvegarde.lireObjet();
+						try {
+							refModele=Sauvegarde.lireModele();
+						} catch (ClassNotFoundException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 			}
 			return refModele;
 		}
@@ -66,10 +76,6 @@ public class Modele implements Serializable {
 				System.out.println(it.next().toString());
 			}
 		}
-//		@Override
-//		public Iterator<Module> iterator(){
-//			return Collections.unmodifiableSet(modules).iterator();
-//		}
 		
 		public void getListAdmin(){
 			Iterator<Admin> it = administrateurs.iterator();

@@ -1,7 +1,8 @@
 import java.io.Serializable;
+import java.util.Objects;
 
 
-public class Module implements Serializable{
+public class Module implements Serializable, Comparable<Module>{
 
 
 	/**
@@ -48,9 +49,36 @@ public class Module implements Serializable{
 	}
 	
 	//Méthodes
+	
+	
+	@Override
 	public String toString() {
 		String res;
 		res = "Module("+this.nom+","+this.syllabus+","+this.prerequis+")";
 		return res;
+	}
+	
+	@Override
+	public boolean equals (Object o) {
+		if(o==this) {//Si c'est le même
+			return true;
+		} 
+		if (!(o instanceof Module)) {//Si ce n'est pas un point
+			return false;
+		}
+
+		Module p = (Module) o;
+		return ((this.getNom().equals(p.getNom()))&&(this.getSyllabus().equals(p.getSyllabus()))&&(this.getPrerequis().equals(p.getPrerequis())));
+		//Si nom obligatoire, on peut faire this.nom.equals(p.nom)
+	}
+	
+	@Override
+	public int compareTo(Module o) {
+		return this.getNom().compareTo(o.getNom());
+	}
+	
+	@Override
+	public final int hashCode() {
+		return Objects.hash(this.getNom(),this.getSyllabus(),this.getPrerequis());
 	}
 }

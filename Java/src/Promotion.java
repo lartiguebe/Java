@@ -1,6 +1,6 @@
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.NavigableSet;
+import java.util.TreeSet;
 
 
 public class Promotion implements Serializable {
@@ -10,8 +10,8 @@ public class Promotion implements Serializable {
 	 */
 	private static final long serialVersionUID = 6346273924623297066L;
 	private String libellePromo;
-	private Set<Etudiant> setListeEtudiants = new HashSet<Etudiant>();
-	private Set<Module> setListeModules = new HashSet<Module>();
+	private NavigableSet<Etudiant> setListeEtudiants = new TreeSet<>();
+	private NavigableSet<Module> setListeModules = new TreeSet<>();
 	
 	
 	public double calculMoyenne(int idUtilisateur) {
