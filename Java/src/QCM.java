@@ -8,17 +8,19 @@ public class QCM {
 	// Date de début et de fin
 	private GregorianCalendar dateDebutQCM;
 	private GregorianCalendar dateFinQCM;
+	private boolean statut;
+	private Session session;
 	// Promotion
 	private Promotion promotion;
 	// Liste des questions du qcm
 	private ArrayList<QuestionQCM> questionnaire=new ArrayList<QuestionQCM>();
 	
 	// Constructeur
-	public QCM(String libelle, GregorianCalendar dateDebutQCM,GregorianCalendar dateFinQCM, Promotion promotion) {
-		this.setLibelle(libelle);
-		this.dateDebutQCM=dateDebutQCM;
-		this.dateFinQCM=dateFinQCM;
+	public QCM(String libelle, Session session, Promotion promotion, boolean statut) {
+		this.libelle=libelle;
+		this.session=session;
 		this.promotion=promotion;
+		this.statut=statut;
 	}
 	
 	// Construction de la date à partir du jour, mois et de l'année
