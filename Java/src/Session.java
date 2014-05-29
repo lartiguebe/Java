@@ -5,15 +5,11 @@ public class Session {
 	private GregorianCalendar dateDebut;
 	private GregorianCalendar dateFin;
 	
-	public static void definirDate(int jour, int mois, int annee){
+	public static GregorianCalendar definirDate(int jour, int mois, int annee){
 		
 		GregorianCalendar calendar = new GregorianCalendar();	
 		calendar.set(annee,mois+1,jour);
-		
-		/* calendar.set(Calendar.YEAR, annee);
-		calendar.set(Calendar.MONTH, mois+1);
-		calendar.set(Calendar.DAY, jour);
-		 */
+		return(calendar);
 			
 		}
 	

@@ -6,14 +6,12 @@ public class QCM {
 	// Libelle du qcm
 	private String libelle;
 	// Date de début et de fin
-	private GregorianCalendar dateDebutQCM;
-	private GregorianCalendar dateFinQCM;
 	private boolean statut;
-	private Session session;
 	// Promotion
 	private Promotion promotion;
 	// Liste des questions du qcm
 	private ArrayList<QuestionQCM> questionnaire=new ArrayList<QuestionQCM>();
+	private Session session;
 	
 	// Constructeur
 	public QCM(String libelle, Session session, Promotion promotion, boolean statut) {
@@ -23,14 +21,6 @@ public class QCM {
 		this.statut=statut;
 	}
 	
-	// Construction de la date à partir du jour, mois et de l'année
-	public static GregorianCalendar definirDate(int jour, int mois, int annee){
-		
-		GregorianCalendar calendar = new GregorianCalendar();	
-		calendar.set(annee,mois+1,jour);
-		return(calendar);
-		}
-	
 
 	// Ajout d'une question au qcm
 	public void ajouterQuestion(QuestionQCM question) {
@@ -38,22 +28,6 @@ public class QCM {
 	}
 
 	// getters et setters
-	public GregorianCalendar getDateDebutQCM() {
-		return dateDebutQCM;
-	}
-
-	public void setDateDebutQCM(GregorianCalendar dateDebutQCM) {
-		this.dateDebutQCM = dateDebutQCM;
-	}
-
-	public GregorianCalendar getDateFinQCM() {
-		return dateFinQCM;
-	}
-
-	public void setDateFinQCM(GregorianCalendar dateFinQCM) {
-		this.dateFinQCM = dateFinQCM;
-	}
-
 	public Promotion getPromotion() {
 		return promotion;
 	}
@@ -95,7 +69,7 @@ public class QCM {
 		for (i=0;i<nombreQuestion;i++){
 			libelleQuestion="Question";
 			QuestionQCM question=new QuestionQCM(libelleQuestion);
-			question=creerQuestion(question,libelleQuestion);
+			question=QuestionQCM.creerQuestion(libelleQuestion);
 			ajouterQuestion(question);
 		}
 		return(questionnaire);

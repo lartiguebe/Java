@@ -17,22 +17,13 @@ public class Professeur extends Utilisateur implements Serializable{
 
 	//Méthodes
 	public void definirQCM(){
-		boolean suite=true;
 		
-		int jour,mois,annee;
-		int jour0,mois0,annee0;
-		jour=1; jour0=3; mois=3; mois0=8; annee=2010; annee0=2012;
-		String libelle;
-		libelle="nomQCM";
-		Promotion promo=new Promotion("PromoEx");
-		QCM questionnaire=new QCM(libelle,QCM.definirDate(jour,mois,annee),QCM.definirDate(jour0,mois0,annee0),promo);
-		while (suite) {
-			
-		}
 	}
 	
 	public void creerSessionQCM(){
+		int jourD,jourF,moisD,moisF,anneeD,anneeF;
 		
+		Session session=new Session(Session.definirDate(jourD,moisD,anneeD),Session.definirDate(jourF,moisF,anneeF));
 	}
 	
 	public void consulterResultat(){

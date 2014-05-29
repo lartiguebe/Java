@@ -43,7 +43,7 @@ public class QuestionQCM {
 	// Ajout d'une réponse à une question
 	public void ajouterReponse(String reponse, boolean bon) {
 		// Ajout de la réponse à la liste
-		    this.reponses.add(reponse);
+		    reponses.add(reponse);
 		    // Si c'est la bonne réponse, on récupère son indice
 		    if (bon) {
 		      indiceBonneReponse = reponses.size();
@@ -92,7 +92,7 @@ public class QuestionQCM {
 				juste=true;
 			}
 			// On ajoute la réponse au questionnaire
-			ajouterReponse(reponses[i],juste);
+			this.ajouterReponse(reponses[i],juste);
 		}
 		// Récupération de l'indice de la bonne réponse
 		indiceBonneReponse=getIndiceBonneReponse();
