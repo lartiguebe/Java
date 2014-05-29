@@ -89,7 +89,8 @@ public class QCM {
 		// Libelle d'une question
 		String libelleQuestion;
 		// Création d'un qcm
-		QCM questionnaire=new QCM(libelle,definirDate(jourD,moisD,anneeD),definirDate(jourF,moisF,anneeF),promo);
+		Session session=new Session(definirDate(jourD,moisD,anneeD),definirDate(jourF,moisF,anneeF));
+		QCM questionnaire=new QCM(libelle,session,promo,statut);
 		// Ajout des questions au qcm
 		for (i=0;i<nombreQuestion;i++){
 			libelleQuestion="Question";
