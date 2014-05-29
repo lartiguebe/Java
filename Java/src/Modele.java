@@ -1,7 +1,9 @@
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 import java.util.NavigableSet;
 import java.util.Set;
 import java.util.TreeSet;
@@ -17,6 +19,8 @@ public class Modele implements Serializable {
 	private NavigableSet<Professeur> profs;
 	private NavigableSet<Etudiant> etudiants;
 	private NavigableSet<Promotion> promos;
+	private NavigableSet<QCM> qcms;
+	private ArrayList<QuestionQCM> questions;
 	
 		//Getters
 		public Set<Module> getModule(){
@@ -39,6 +43,15 @@ public class Modele implements Serializable {
 			return Collections.unmodifiableSortedSet(this.promos);
 		}
 		
+		public Set<QCM>getQCM(){
+			return Collections.unmodifiableSortedSet(this.qcms);
+		}
+		
+		public List<QuestionQCM> getQuestions(){
+			return Collections.unmodifiableList(this.questions);
+		}
+		
+		
 		//Constructeur
 		public Modele() {
 			this.modules = new TreeSet<>();
@@ -46,6 +59,8 @@ public class Modele implements Serializable {
 			this.profs = new TreeSet<>();
 			this.etudiants = new TreeSet<>();
 			this.promos = new TreeSet<>();
+			this.qcms = new TreeSet<QCM>();
+			this.questions = new ArrayList<QuestionQCM>();
 			try {
 				Admin.creerUtilisateur("admin","","admin", this);
 			} catch (ClassNotFoundException | IOException e) {
