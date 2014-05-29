@@ -121,6 +121,7 @@ public class Modele implements Serializable {
 		}
 		
 		
+		
 		//Méthodes
 		public void ajouterModule(Module m){
 			modules.add(m);

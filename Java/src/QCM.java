@@ -3,29 +3,24 @@ import java.util.GregorianCalendar;
 
 public class QCM {
 
+	private String libelle;
 	private GregorianCalendar dateDebutQCM;
 	private GregorianCalendar dateFinQCM;
-	private String promotion;
+	private Promotion promotion;
 	private ArrayList<QuestionQCM> questionnaire=new ArrayList<QuestionQCM>();
 	
-	//private String repetition; 
-	// Ajouter nombre de questions en paramètre?
-	public QCM(GregorianCalendar dateDebutQCM,GregorianCalendar dateFinQCM, String promotion) {
+	public QCM(String libelle, GregorianCalendar dateDebutQCM,GregorianCalendar dateFinQCM, Promotion promotion) {
+		this.setLibelle(libelle);
 		this.dateDebutQCM=dateDebutQCM;
 		this.dateFinQCM=dateFinQCM;
 		this.promotion=promotion;
 	}
 	
-	public static void definirDate(int jour, int mois, int annee){
+	public static GregorianCalendar definirDate(int jour, int mois, int annee){
 		
 		GregorianCalendar calendar = new GregorianCalendar();	
 		calendar.set(annee,mois+1,jour);
-		
-		/* calendar.set(Calendar.YEAR, annee);
-		calendar.set(Calendar.MONTH, mois+1);
-		calendar.set(Calendar.DAY, jour);
-		 */
-			
+		return(calendar);
 		}
 	
 
@@ -49,11 +44,11 @@ public class QCM {
 		this.dateFinQCM = dateFinQCM;
 	}
 
-	public String getPromotion() {
+	public Promotion getPromotion() {
 		return promotion;
 	}
 
-	public void setPromotion(String promotion) {
+	public void setPromotion(Promotion promotion) {
 		this.promotion = promotion;
 	}
 /*
@@ -65,5 +60,27 @@ public class QCM {
 		this.repetition = repetition;
 	}
 	*/
+
+	public String getLibelle() {
+		return libelle;
+	}
+
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
+	}
 	
+	
+	public QCM creerQCM(int jourD,int jourF,int moisD,int moisF,int anneeD,int anneeF,String libelle, Promotion promo) {
+		int nombreQuestion=20;
+		int i;
+		String libelleQuestion;
+		QCM questionnaire=new QCM(libelle,definirDate(jourD,moisD,anneeD),definirDate(jourF,moisF,anneeF),promo);
+		for (i=0;i<nombreQuestion;i++){
+			libelleQuestion="Question";
+			QuestionQCM question=new QuestionQCM(libelleQuestion);
+			question=creerQuestion(question,libelleQuestion);
+			ajouterQuestion(question);
+		}
+		return(questionnaire);
+	}
 }
