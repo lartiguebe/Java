@@ -5,6 +5,8 @@ public class QCM {
 	private GregorianCalendar dateDebutQCM;
 	private GregorianCalendar dateFinQCM;
 	private String promotion;
+	private ArrayList<QuestionQCM> questionnaire=new ArrayList<QuestionQCM>();
+	
 	//private String repetition; 
 	// Ajouter nombre de questions en paramètre?
 	public QCM(GregorianCalendar dateDebutQCM,GregorianCalendar dateFinQCM, String promotion) {
@@ -24,6 +26,11 @@ public class QCM {
 		 */
 			
 		}
+	
+
+	public void ajouterQuestion(QuestionQCM question) {
+		this.questionnaire.add(question);
+	}
 
 	public GregorianCalendar getDateDebutQCM() {
 		return dateDebutQCM;
