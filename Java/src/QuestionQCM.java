@@ -94,7 +94,9 @@ public class QuestionQCM {
 			// On ajoute la réponse au questionnaire
 			ajouterReponse(reponses[i],juste);
 		}
+		// Récupération de l'indice de la bonne réponse
 		indiceBonneReponse=getIndiceBonneReponse();
+		// Création de la question avec l'indice de la bonne réponse
 		QuestionQCM question1=new QuestionQCM(libelle,indiceBonneReponse);
 		return(question1);
 	}
