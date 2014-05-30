@@ -1,12 +1,16 @@
 import java.io.Serializable;
 import java.util.Objects;
 
-
+/**
+ * @author Benjamin Lartiuge
+ * @version 1.0
+ *
+ */
 public class Module implements Serializable, Comparable<Module>{
 
 
 	/**
-	 * 
+	 * Définition d'un serialVersionUID
 	 */
 	private static final long serialVersionUID = -2146559383652094675L;
 	private String nom;
@@ -42,6 +46,12 @@ public class Module implements Serializable, Comparable<Module>{
 		this.prerequis = prerequis;
 	}
 	
+	/**
+	 * Constructeur de la module
+	 * @param nom nom du module à donner
+	 * @param syllabus syllabus du module à donner
+	 * @param prerequis prerequis du module à donner
+	 */
 	public Module(String nom, String syllabus, String prerequis){
 		this.nom=nom;
 		this.syllabus=syllabus;

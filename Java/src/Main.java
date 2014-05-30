@@ -1,10 +1,16 @@
 import java.io.IOException;
-
+/**
+ * Application principale
+ * @author Lartigue Benjamin
+ * @version 1.0
+ *
+ */
 
 public class Main {
 
 	/**
-	 * @param args
+	 * Utilisée pour tests avant IHM
+	 * @param args Tableau d'entrée des options
 	 * @throws IOException 
 	 * @throws ClassNotFoundException 
 	 */

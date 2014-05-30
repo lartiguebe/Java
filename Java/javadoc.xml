@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="private" author="true" classpath="." destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" source="1.7" sourcefiles="src/Utilisateur.java,src/QuestionQCM.java,src/Etudiant.java,src/Promotion.java,src/Sauvegarde.java,src/ReponseQCM.java,src/Admin.java,src/Modele.java,src/Main.java,src/Professeur.java,src/Session.java,src/Module.java,src/QCM.java" sourcepath="src" splitindex="true" use="true" version="true">
+            <link href="http://download.oracle.com/javase/7/docs/api/"/>
+        </javadoc>
+    </target>
+</project>
