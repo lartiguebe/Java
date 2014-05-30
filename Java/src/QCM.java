@@ -1,30 +1,73 @@
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
+
+/**
+ * QCM est la classe correspondant aux questionnaires à choix multiples.
+ * Elle est caractérisée par:
+ * Le libellé du qcm
+ * Le statut du qcm, public ou privé
+ * La promotion concernée par le qcm
+ * La session dans laquelle ce qcm est posée
+ * @author groupe QCM6
+ * @version 1.0
+ */
+
 public class QCM {
 
-	// Libelle du qcm
+	/**
+	 * Libelle du questionnaire
+	 * @see libelle#getLibelle
+	 * @see libelle#setLibelle(String)
+	 */
 	private String libelle;
-	// Date de début et de fin
+	/**
+	 * Statut de la question, 1 si public, 0 si privé
+	 */
 	private boolean statut;
-	// Promotion
+	/**
+	 * Promotion concernée par le qcm
+	 * @see Promotion
+	 */
 	private Promotion promotion;
-	// Liste des questions du qcm
-	private ArrayList<QuestionQCM> questionnaire=new ArrayList<QuestionQCM>();
+	/**
+	 * Liste de questions
+	 */
+	private ArrayList<QuestionQCM> questions=new ArrayList<QuestionQCM>();
+	/**
+	 * Session dans laquelle est posée le qcm
+	 * @see Session
+	 */
 	private Session session;
 	
-	// Constructeur
-	public QCM(String libelle, Session session, Promotion promotion, boolean statut) {
+	/**
+	 * Constructeur QCM
+	 * @param libelle
+	 * le libelle du qcm
+	 * @param session
+	 * la session dans laquelle il est posé
+	 * @param promotion
+	 * la promotion à laquelle il est posé
+	 * @param statut
+	 * le statut, privé ou public
+	 * @param questions
+	 * la liste des questions
+	 */
+	public QCM(String libelle, Session session, Promotion promotion, boolean statut,ArrayList<QuestionQCM> questions) {
 		this.libelle=libelle;
 		this.session=session;
 		this.promotion=promotion;
 		this.statut=statut;
+		this.questions=questions;
 	}
 	
 
-	// Ajout d'une question au qcm
+	/**
+	 * Permet d'ajouter une question à la liste des questions
+	 * @param question
+	 */
 	public void ajouterQuestion(QuestionQCM question) {
-		this.questionnaire.add(question);
+		this.questions.add(question);
 	}
 
 	// getters et setters
